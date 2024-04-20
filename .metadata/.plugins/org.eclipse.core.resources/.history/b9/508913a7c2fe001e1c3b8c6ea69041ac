@@ -1,0 +1,63 @@
+package somaMaximaDosElementosDeUmSubVetor;
+
+public class SomaMaxima {
+	
+	
+		public  double SomaMaximaSubVet( int tamanhoSubVetor,double valoresDovetPrincipal[]) { // metodo que rretorna um array
+					
+			 // Vetor para armazenar os resultados da média móvel
+				       
+			double [] vetorDosValoresSomados = new double[valoresDovetPrincipal.length - tamanhoSubVetor + 1];
+			int tamanhoDoSubVetor;
+			double somaMax=0;
+			double somaMaxDeRetorno = 0;
+			double somaProvisoriaDeSaida= 0;
+			
+			 
+			
+			
+	     
+	       
+	       
+	     
+	        // Calculando a média móvel para cada posição no vetor
+	        for (int i = 0; i <= valoresDovetPrincipal.length - tamanhoDoSubVetor; i++) {
+	            double soma = 0; // essa linha sempre vai zerar a variavel soma, caso ela ja tenha algum valor, antes dela entrar no laço do for com j
+	            
+	            for (int j = i; j < i + tamanhoDoSubVetor; j++) { // obs: j sempre começa valendo i, mais durante a iteração no for(2) ou  for com j, j vai mudar de valor e i vai continuar com o valor definido na iteração do primeiro for até que o loop desse laço  do primeiro for se conclua, assim havera a iteração em i e acontecera i++ e i mudara de valor
+	            	
+	                soma += valoresDovetPrincipal[j]; // fara a soma dos dos valores do do vetor principal,de acordo com a quantidade de indice do subvetor e o resultado sera armazenado na variavel soma
+	            }
+	            vetorDosValoresSomados[i] = soma ; // o resultado da soma sera armazenado na posição i do vetor
+	            
+	            
+	        }
+	        
+	        // aqui vamos testar os valores para encontrar a soma maxima, de um sub vetor
+	        for(int i = 0; i < vetorDosValoresSomados.length ;i++) {
+				
+				
+				soma = vetorDosValoresSomados[i];
+		
+					
+				
+				if(somaMax < soma ) { // compara se o valor armazenado em maiormedia é menor que o valor armazenado em media, caso sim:
+					somaMax = soma; // atribuo  o valor de media em maiormedia
+				}else {
+					somaMax = somaMax;
+					
+				}
+								
+							
+							
+			}
+	       
+	        somaMaxDeRetorno = Math.floor(somaMax);
+	        return somaMaxDeRetorno;
+			
+			
+
+		}
+}
+	
+

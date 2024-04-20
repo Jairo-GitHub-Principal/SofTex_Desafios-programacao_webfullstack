@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+D:\FoxTex_workover\Desafios_Programacao_webFull_stack\.metadata\.plugins\org.eclipse.jdt.core
+815117866.index
+898415482.index
+4175038804.index
+2574292952.index
+1865797976.index
+3413725848.index
+1197780291.index

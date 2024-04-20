@@ -1,0 +1,2 @@
+module mediaDeTemperaturasAcada3minutos {
+}

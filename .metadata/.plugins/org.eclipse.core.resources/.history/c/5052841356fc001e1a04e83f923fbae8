@@ -1,0 +1,11 @@
+package mediaDeTemperaturasAcada3minutos;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println("Média de temperatura a cada 3 minutos");
+	}
+
+}

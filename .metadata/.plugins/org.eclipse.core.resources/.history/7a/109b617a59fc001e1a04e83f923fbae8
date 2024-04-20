@@ -1,0 +1,32 @@
+package mediaDeTemperaturasAcada3minutos;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int vetTemperaturas [];
+		
+		
+		
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Média de temperatura que sera lida em um determinado periodo,\n durante uma quandidade finita de vzs ");
+		
+		// aqui sera recebido o valor que definira o tamanho do vetor, pois o tamanho do vetor representara a quantidade de medições que sera feito da temperatura
+		System.out.println("\n informea quantidade de medições que sera feita \n exemplo: 7 para definir um vetor de 7 posições \n que definira quantidade de leituras que sera feita  ");
+		
+		int tamanhoDoVetor = entrada.nextInt();
+		vetTemperaturas = new int[tamanhoDoVetor];
+		
+		System.out.println("agora informe os valores de temperaturas,\n conforme a quantidade de temperatura que sera lida");
+		
+System.out.println("\n informe o tempo esperado entre as leituras de temperaduta\n (de 1 a 10 minutor) exemplo 3 para 3 minuots ");
+		
+		int tempoEntreAsLeituras  = entrada.nextInt();
+		
+		
+		
+	}
+
+}

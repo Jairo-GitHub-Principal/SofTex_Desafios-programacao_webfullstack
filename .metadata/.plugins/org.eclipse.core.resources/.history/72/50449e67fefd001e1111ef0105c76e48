@@ -1,0 +1,30 @@
+package mediaMoveltemperatura;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double[] mediaMovel;
+		 // Vetor de entrada
+        double[] vetor = {3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
+        
+
+        // Tamanho da janela da média móvel
+        int tamanhoJanela = 3;
+
+        // Calculando a média móvel
+        double[] mediaMovel = calcularMediaMovel(vetor, tamanhoJanela);
+
+        // Imprimindo a média móvel
+        System.out.println("Média móvel:");
+        for (double valor : mediaMovel) {
+            System.out.println(valor);
+        }
+        
+        
+        
+        
+       
+	}
+
+}

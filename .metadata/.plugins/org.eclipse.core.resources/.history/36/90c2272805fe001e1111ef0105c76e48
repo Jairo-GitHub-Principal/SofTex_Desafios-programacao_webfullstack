@@ -1,0 +1,220 @@
+package mediaDeTemperaturasAcada3minutos;
+
+import java.util.ArrayList;
+
+public class CalcularMediaDeTemperatura {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	double vetTemperaturas [];
+//	double vetMedia[];
+//	double maiorMedia = 0;
+//	double menorMedia = 10/0.0; // faz com que o valor de media inicie como infinito
+//	double media = 0;
+//	double saidaVet[];
+//	double saidaProvisoria = 0;
+//	ArrayList<Double> saida = new ArrayList<>();
+//	
+	public  double[] CalcularMediaTemp( int tempoEntreLeituras,double valoresTemp[]) { // metodo que rretorna um array
+//				
+//			 // Vetor para armazenar os resultados da média móvel
+        double[] mediaMovel = new double[vetor.length - tamanhoJanela + 1];
+        double mediaMax = 0;
+        double mediaMin = 10/0.0;
+        double media = 0;
+        double[]mediaSaida = new double[2];
+
+        // Calculando a média móvel para cada posição no vetor
+        for (int i = 0; i <= vetor.length - tamanhoJanela; i++) {
+            double soma = 0; // essa linha sempre vai zerar a variavel soma, caso ela ja tenha algum valor, antes dela entrar no laço do for com j
+            for (int j = i; j < i + tamanhoJanela; j++) { // obs: j sempre começa valendo i, mais durante a iteração no for(2) ou  for com j, j vai mudar de valor e i vai continuar com o valor definido na iteração do primeiro for até que o loop desse laço  do primeiro for se conclua, assim havera a iteração em i e acontecera i++ e i mudara de valor 
+                soma += vetor[j];
+            }
+            mediaMovel[i] = soma / tamanhoJanela;
+            
+            
+        }
+        
+        for(int i = 0; i < mediaMovel.length ;i++) {
+			
+			
+			media = mediaMovel[i];
+	
+				
+			
+			if(mediaMax < media) { // compara se o valor armazenado em maiormedia é menor que o valor armazenado em media, caso sim:
+				mediaMax = media; // atribuo  o valor de media em maiormedia
+			}else {
+				mediaMax = mediaMax;
+				
+			}
+			
+			
+			if(mediaMin > media) { // aqui é o contrario do de cima, aqui sera encontrado a menor media
+				mediaMin = media;
+			}else {
+				mediaMin = mediaMin;
+				
+			}
+						
+						
+		}
+        mediaSaida[0]= Math.floor(mediaMax);
+        mediaSaida[1] = Math.floor(mediaMin);
+        return mediaSaida;
+		
+		
+//		vetMedia= new double[valoresTemp.length];
+//		
+//		for(int i = 0; i < valoresTemp.length-tempoEntreLeituras +1;) {
+//			System.out.println(" valores de i = "+ i);
+//
+//			
+//				
+//			for(int j = 0; j < tempoEntreLeituras; j++){
+//				saidaProvisoria = saidaProvisoria + valoresTemp[i]; //20
+//					
+//				
+//					
+//					
+//				
+//					
+//				
+//			}
+//				
+//				
+//			vetMedia[i] = saidaProvisoria;
+//			System.out.println("valor da primeira soma de vetmedia = "+" posição: "+i+" = "+ vetMedia[i]);
+//			
+//			saidaProvisoria = 0;
+//			
+//						
+//
+//				i++;
+//			
+//		}
+//		
+//		vetTemperaturas = new double[vetMedia.length];
+//
+//				for(int i = 0; i < vetMedia.length;i++) {
+//					vetTemperaturas[i]=vetMedia[i];
+//					System.out.println("vetTemp na posição "+i+"=" +vetTemperaturas[i]);
+//					media = vetTemperaturas[i]/tempoEntreLeituras; // calcula a media 
+//			
+//						
+//					
+//					if(maiorMedia < media) { // compara se o valor armazenado em maiormedia é menor que o valor armazenado em media, caso sim:
+//						maiorMedia = media; // atribuo  o valor de media em maiormedia
+//					}else {
+//						maiorMedia = maiorMedia;
+//					}
+//					
+//					
+//					if(menorMedia > media) { // aqui é o contrario do de cima, aqui sera encontrado a menor media
+//						menorMedia = media;
+//					}else {
+//						menorMedia = menorMedia;
+//					}
+//								
+//								
+//				}
+//		
+//		
+//		
+//				
+//		
+//		
+//		return  new double[]{maiorMedia,menorMedia} ; // retorna um array de 2 posições com o valor da maior media e o valor da menor media
+	}
+
+}
+
+
+/*
+ * possivael soluçao para percorrer o vetor 
+  
+  public class Main {
+    public static void main(String[] args) {
+        // Vetor de entrada
+        double[] vetor = {3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
+
+        // Tamanho da janela da média móvel
+        int tamanhoJanela = 3;
+
+        // Calculando a média móvel
+        double[] mediaMovel = calcularMediaMovel(vetor, tamanhoJanela);
+
+        // Imprimindo a média móvel
+        System.out.println("Média móvel:");
+        for (double valor : mediaMovel) {
+            System.out.println(valor);
+        }
+    }
+
+    public static double[] calcularMediaMovel(double[] vetor, int tamanhoJanela) {
+        // Vetor para armazenar os resultados da média móvel
+        double[] mediaMovel = new double[vetor.length - tamanhoJanela + 1];
+
+        // Calculando a média móvel para cada posição no vetor
+        for (int i = 0; i <= vetor.length - tamanhoJanela; i++) {
+            double soma = 0;
+            for (int j = i; j < i + tamanhoJanela; j++) {
+                soma += vetor[j];
+            }
+            mediaMovel[i] = soma / tamanhoJanela;
+        }
+
+        return mediaMovel;
+    }
+}
+ 
+ * */
+
+
+// solução para a somatoria que percorre 3 indice pega o valor armazenado em cada um deles e soma-os e armazena em uma variavel
+// depois volta um indice atras exemplo: percorri o indice 0,1,2 somei seus valores, depois volta um indice atras e repito o processo exemplo:
+// volto no indi 1, e a partir dele percorro mais 3 indices, que sera o indice 1,2,3 somo seus valores e armazeno em uma variavel, e assim por diante
+
+//vetMedia= new double[valoresTemp.length];
+//
+//for(int i = 0; i < valoresTemp.length-tempoEntreLeituras +1;) {
+//	System.out.println(" valores de i = "+ i);
+//
+//	saidaProvisoria = saidaProvisoria + valoresTemp[i]; // 10
+//		
+//	for(int j = 0; j < 1; j++){
+//		saidaProvisoria = saidaProvisoria + valoresTemp[i+1]; //20
+//			
+//		for(int l = 0; l < 1; ) {
+//			saidaProvisoria = saidaProvisoria + valoresTemp[i+2]; // 30
+//			
+//			l++;
+//				
+//				
+//		}
+//			
+//		
+//			
+//		
+//	}
+//		
+//		
+//	vetMedia[i] = saidaProvisoria;
+//	System.out.println("valor da primeira soma de vetmedia = "+" posição: "+i+" = "+ vetMedia[i]);
+//	
+//	saidaProvisoria = 0;
+//	
+//				
+//
+//		i++;
+//	
+//}
+//
+

@@ -1,0 +1,115 @@
+package mediaDeTemperaturasAcada3minutos;
+
+import java.util.ArrayList;
+
+public class CalcularMediaDeTemperatura {
+	
+	double vetTemperaturas [];
+	double vetMedia[];
+	double maiorMedia = 0;
+	double menorMedia = 10/0.0; // faz com que o valor de media inicie como infinito
+	double media = 0;
+	double saidaVet[];
+	ArrayList<Double> saida = new ArrayList<>();
+	
+	public  double[] CalcularMediaTemp( int tempoEntreLeituras,double valoresTemp[]) { // metodo que rretorna um array
+		vetTemperaturas = new double[valoresTemp.length];
+					
+		for(int i = 0; i < vetTemperaturas.length;i++) {
+			vetTemperaturas[i]=valoresTemp[i];
+			System.out.println("vetTemp na posição "+i+"=" +vetTemperaturas[i]);
+media = vetTemperaturas[i]/tempoEntreLeituras; // calcula a media 
+			
+			if(maiorMedia < media) {
+				maiorMedia = media;
+			}else {
+				maiorMedia = maiorMedia;
+			}
+			
+			
+			if(menorMedia > media) {
+				menorMedia = media;
+			}else {
+				menorMedia = menorMedia;
+			}
+						
+						
+		}
+		
+		vetMedia= new double[valoresTemp.length];
+		
+		for(int i = 0; i < tempoEntreLeituras;) {
+			System.out.println(" valores de i = "+ i);
+
+			vetMedia[i] = vetMedia[i] + valoresTemp[i]; // 10
+				
+			for(int j = 1; j < tempoEntreLeituras + 1; j++){
+				vetMedia[i] += valoresTemp[j]; // 20
+					
+				for(int l = 2; l < tempoEntreLeituras + 1;l++ )
+						vetMedia[i] = vetMedia[i] + valoresTemp[l]; // 30
+					
+					System.out.println("valor da primeira soma de vetmedia = "+" posição: "+i+" = "+ vetMedia[i]);
+				
+			}
+				
+				saidaVet = new double[vetMedia.length];
+				saidaVet[i]= (vetMedia[i]/tempoEntreLeituras);
+				saida.add(saidaVet[i]);
+				
+				for(int m = 0;m < saida.size();m++ ) {
+			System.out.println(" vetMedia= "+ saida.get(m));
+				}
+			
+
+				i++;
+			
+		}
+		
+				
+		
+		
+		return  new double[]{maiorMedia,menorMedia} ; // retorna um array de 2 posições com o valor da maior media e o valor da menor media
+	}
+
+}
+
+
+/*
+ * possivael soluçao para percorrer o vetor 
+ * 
+ * public class Main {
+    public static void main(String[] args) {
+        // Vetor de entrada
+        double[] vetor = {3, 5, 7, 9, 11, 13, 15, 17, 19, 21};
+
+        // Tamanho da janela da média móvel
+        int tamanhoJanela = 3;
+
+        // Calculando a média móvel
+        double[] mediaMovel = calcularMediaMovel(vetor, tamanhoJanela);
+
+        // Imprimindo a média móvel
+        System.out.println("Média móvel:");
+        for (double valor : mediaMovel) {
+            System.out.println(valor);
+        }
+    }
+
+    public static double[] calcularMediaMovel(double[] vetor, int tamanhoJanela) {
+        // Vetor para armazenar os resultados da média móvel
+        double[] mediaMovel = new double[vetor.length - tamanhoJanela + 1];
+
+        // Calculando a média móvel para cada posição no vetor
+        for (int i = 0; i <= vetor.length - tamanhoJanela; i++) {
+            double soma = 0;
+            for (int j = i; j < i + tamanhoJanela; j++) {
+                soma += vetor[j];
+            }
+            mediaMovel[i] = soma / tamanhoJanela;
+        }
+
+        return mediaMovel;
+    }
+}
+ * */
